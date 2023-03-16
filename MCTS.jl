@@ -1,4 +1,3 @@
-# include("pypsa_mcts.jl")
 
 struct MDP
     γ # discount factor
@@ -6,8 +5,9 @@ struct MDP
     A # action space
     # T # transition function
     # R # reward function
-    # TR # sample transition and reward
+    TR # sample transition and reward
 end
+include("pypsa_mcts.jl")
 
 struct MonteCarloTreeSearch
     P # problem where P::MDP
@@ -16,7 +16,30 @@ struct MonteCarloTreeSearch
     d # depth
     m # number of simulations
     c # exploration constant
-    U # value function estimate
+    # U # value function estimate
+end
+
+struct RolloutLookahead
+	P # problem
+	π # rollout policy
+	d # depth
+end
+
+randstep(P::MDP, s, a) = P.TR(s, a)
+
+function rollout(P, s, π, d)
+    ret = 0.0
+    for t in 1:d
+        a = π(s)
+        s, r = randstep(P, s, a)
+        ret += P.γ^(t-1) * r
+    end
+    return ret
+end
+
+function (π::RolloutLookahead)(s)
+	U(s) = rollout(π.P, s, π.π, π.d)
+    return greedy(π.P, U, s).a
 end
 
 function (πm::MonteCarloTreeSearch)(s)
@@ -32,7 +55,7 @@ function simulate!(πm::MonteCarloTreeSearch, s, d=πm.d)
         return 0 #πm.U(s)
     end
     P, N, Q = πm.P, πm.N, πm.Q
-    A, γ = P.A, P.γ
+    A, γ , TR = P.A, P.γ, P.TR
     if !haskey(N, (s, first(A)))
         for a in A
             N[(s,a)] = 0
@@ -43,6 +66,9 @@ function simulate!(πm::MonteCarloTreeSearch, s, d=πm.d)
     a = explore(πm, s)
     println(a)
     sp, r = TR(s,a)
+    print(sp[1])
+    prev_year = sp[1]
+    sp[1] = prev_year + 5 #moving year forward 5
     q = r + γ*simulate!(πm, sp, d-1)
     println(q)
     N[(s,a)] += 1
@@ -58,28 +84,29 @@ function explore(πm::MonteCarloTreeSearch, s)
     return argmax(a->Q[(s,a)] + c*bonus(N[(s,a)], Ns), A)
 end
 
-function TR(state, action)
-    state[1] = state[1] + 1
-    state[2] = state[2] + 2
-    state[3] = state[3] + 1
-    return(state,100*rand())
-end
+# function TR(state, action)
+#     state[1] = state[1] + 1
+#     state[2] = state[2] + 2
+#     state[3] = state[3] + 1
+#     return(state,100*rand())
+# end
 
 
-γ = 0.95
-A = ["build500kv", "buildHVDC"] # vector of actions
-P = MDP(γ,A)
+# γ = 0.95
+# A = ["build500kv", "buildHVDC"] # vector of actions
+# P = MDP(γ,A)
+P=pypsa_MDP
 
 N = Dict() # vector of int, number of times explored, visit counts N[(s,a)] = 0 initialize as dict()
 Q = Dict() # vector of float, Q value Q[(s,a)] = 0.0 intialize as dict()
 d = 5
-m = 5
-c = 1 # constant
+m = 6
+c = 1000 # constant
 
-πm = MonteCarloTreeSearch(P,N,Q,d,m,c,U)
+πm = MonteCarloTreeSearch(P,N,Q,d,m,c)
 
 initial_state = [2020,0,0]
-(Q, A) = (πm)(initial_state)
+A = (πm)(initial_state)
 println(Q)
 println(A)
 
