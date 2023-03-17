@@ -1,4 +1,3 @@
-
 struct MDP
     γ # discount factor
     # S # state space
@@ -7,6 +6,7 @@ struct MDP
     # R # reward function
     TR # sample transition and reward
 end
+
 include("pypsa_mcts.jl")
 
 struct MonteCarloTreeSearch
@@ -19,36 +19,12 @@ struct MonteCarloTreeSearch
     # U # value function estimate
 end
 
-struct RolloutLookahead
-	P # problem
-	π # rollout policy
-	d # depth
-end
-
-randstep(P::MDP, s, a) = P.TR(s, a)
-
-function rollout(P, s, π, d)
-    ret = 0.0
-    for t in 1:d
-        a = π(s)
-        s, r = randstep(P, s, a)
-        ret += P.γ^(t-1) * r
-    end
-    return ret
-end
-
-function (π::RolloutLookahead)(s)
-	U(s) = rollout(π.P, s, π.π, π.d)
-    return greedy(π.P, U, s).a
-end
-
 function (πm::MonteCarloTreeSearch)(s)
     for k in 1:πm.m
         simulate!(πm, s)
     end
     return argmax(a->πm.Q[(s,a)], πm.P.A)
 end
-
 
 function simulate!(πm::MonteCarloTreeSearch, s, d=πm.d)
     if d ≤ 0
@@ -64,13 +40,10 @@ function simulate!(πm::MonteCarloTreeSearch, s, d=πm.d)
         return 0 #πm.U(s)
     end
     a = explore(πm, s)
-    println(a)
     sp, r = TR(s,a)
-    print(sp[1])
     prev_year = sp[1]
     sp[1] = prev_year + 5 #moving year forward 5
     q = r + γ*simulate!(πm, sp, d-1)
-    println(q)
     N[(s,a)] += 1
     Q[(s,a)] += (q-Q[(s,a)])/N[(s,a)]
     return q
@@ -84,34 +57,56 @@ function explore(πm::MonteCarloTreeSearch, s)
     return argmax(a->Q[(s,a)] + c*bonus(N[(s,a)], Ns), A)
 end
 
-# function TR(state, action)
-#     state[1] = state[1] + 1
-#     state[2] = state[2] + 2
-#     state[3] = state[3] + 1
-#     return(state,100*rand())
-# end
+## INITIALIZE PARAMETERS
 
-
-# γ = 0.95
-# A = ["build500kv", "buildHVDC"] # vector of actions
-# P = MDP(γ,A)
-P=pypsa_MDP
-
+P = pypsa_MDP
 N = Dict() # vector of int, number of times explored, visit counts N[(s,a)] = 0 initialize as dict()
 Q = Dict() # vector of float, Q value Q[(s,a)] = 0.0 intialize as dict()
-d = 5
 m = 6
 c = 1000 # constant
 
-πm = MonteCarloTreeSearch(P,N,Q,d,m,c)
+## MAIN CODE
 
 initial_state = [2020,0,0]
-A = (πm)(initial_state)
-println(Q)
-println(A)
+depth = [5, 5, 4, 3, 2, 1]
+years = [2020, 2025, 2030, 2035, 2040, 2045]
+for i = 1:length(years)
+    println("Computing for year ", years[i])
+    d = depth[i]
+    πm = MonteCarloTreeSearch(P,N,Q,d,m,c)
+    A = (πm)(initial_state)
+    new_state, reward = P.TR(initial_state, A)
+    initial_state = new_state
+    println(Q)
+    println(A)
+end
 
 # U = # πm.U(s) intialize as dict()
 # S = # int, number of states year and what lines have been built  [2020 1 1]
 # T = # function T(s,a,s′)
 # R = # function R(s,a)
 # TR = # function sp, r = TR(s,a) TR function calls on T and R function given (s,a) and yields next state and reward
+
+
+# struct RolloutLookahead
+# 	P # problem
+# 	π # rollout policy
+# 	d # depth
+# end
+
+# randstep(P::MDP, s, a) = P.TR(s, a)
+
+# function rollout(P, s, π, d)
+#     ret = 0.0
+#     for t in 1:d
+#         a = π(s)
+#         s, r = randstep(P, s, a)
+#         ret += P.γ^(t-1) * r
+#     end
+#     return ret
+# end
+
+# function (π::RolloutLookahead)(s)
+# 	U(s) = rollout(π.P, s, π.π, π.d)
+#     return greedy(π.P, U, s).a
+# end
