@@ -1,0 +1,976 @@
+  21   2.33230446e+08  2.33230439e+08  1.98e-08 2.33e-10  8.29e-05     1s
+  22   2.33230445e+08  2.33230444e+08  5.82e-11 2.33e-10  3.63e-06     1s
+  23   2.33230445e+08  2.33230445e+08  4.60e-10 2.33e-10  4.57e-08     1s
+  24   2.33230445e+08  2.33230445e+08  7.28e-11 2.33e-10  4.70e-14     1s
+
+Barrier solved model in 24 iterations and 1.36 seconds (1.86 work units)
+Optimal objective 2.33230445e+08
+
+Crossover log...
+
+     595 DPushes remaining with DInf 0.0000000e+00                 1s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+     118 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.7579217e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     614    2.3323044e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 614 iterations and 1.71 seconds (2.16 work units)
+Optimal objective  2.332304448e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.33e+08
+Total Operational Cost:   233230444.94952676
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.8s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-qx5j9am9.lp
+Reading time = 0.21 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.13s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.15s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     0s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     1s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     1s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     1s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.73 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.23 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.82s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-vjlhwmb8.lp
+Reading time = 0.22 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xd9345224
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.13s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.14s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.85895039e+13 -1.02419580e+13  3.52e+07 1.77e-12  8.30e+10     0s
+   1   6.06816239e+13 -1.02654852e+13  5.20e+06 5.36e+03  1.31e+10     0s
+   2   1.61744215e+13 -9.38647344e+12  3.43e+05 9.23e+01  1.06e+09     0s
+   3   1.68723860e+12 -5.14610193e+12  3.16e+04 1.51e-09  1.42e+08     1s
+   4   1.98142740e+11 -1.26355004e+12  2.73e+03 4.42e-09  2.05e+07     1s
+   5   4.38960044e+10 -2.52782290e+11  3.55e+02 2.33e-09  3.67e+06     1s
+   6   1.07912885e+10 -6.23821102e+10  5.54e+01 2.44e-09  8.69e+05     1s
+   7   2.96070492e+09 -2.25925972e+10  1.38e+01 4.19e-09  3.01e+05     1s
+   8   1.25845233e+09 -9.00694951e+09  5.02e+00 4.07e-10  1.20e+05     1s
+   9   6.76460311e+08 -2.82319670e+09  2.37e+00 3.73e-09  4.10e+04     1s
+  10   4.29869844e+08 -1.69833128e+08  9.79e-01 8.38e-09  7.03e+03     1s
+  11   2.79919961e+08  1.81324223e+08  1.88e-01 7.22e-09  1.15e+03     1s
+  12   2.49892091e+08  2.22260688e+08  6.10e-02 1.30e-08  3.24e+02     1s
+  13   2.39205593e+08  2.28886358e+08  2.10e-02 3.14e-09  1.21e+02     1s
+  14   2.36134857e+08  2.31771264e+08  1.00e-02 6.98e-09  5.11e+01     1s
+  15   2.35035228e+08  2.32482954e+08  6.16e-03 2.04e-09  2.99e+01     1s
+  16   2.34091532e+08  2.32819255e+08  2.91e-03 1.46e-09  1.49e+01     1s
+  17   2.33524113e+08  2.33136869e+08  9.65e-04 2.68e-09  4.53e+00     1s
+  18   2.33258574e+08  2.33204090e+08  8.29e-05 1.86e-09  6.37e-01     1s
+  19   2.33232394e+08  2.33228606e+08  4.52e-06 2.33e-09  4.43e-02     1s
+  20   2.33230516e+08  2.33230292e+08  1.80e-06 5.59e-09  2.63e-03     1s
+  21   2.33230446e+08  2.33230439e+08  1.98e-08 2.33e-10  8.29e-05     2s
+  22   2.33230445e+08  2.33230444e+08  5.82e-11 2.33e-10  3.63e-06     2s
+  23   2.33230445e+08  2.33230445e+08  4.60e-10 2.33e-10  4.57e-08     2s
+  24   2.33230445e+08  2.33230445e+08  7.28e-11 2.33e-10  4.70e-14     2s
+
+Barrier solved model in 24 iterations and 1.72 seconds (1.86 work units)
+Optimal objective 2.33230445e+08
+
+Crossover log...
+
+     595 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+     118 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.7579217e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     614    2.3323044e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 614 iterations and 2.15 seconds (2.16 work units)
+Optimal objective  2.332304448e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.33e+08
+Total Operational Cost:   233230444.94952676
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 1.03s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-crlqe1rx.lp
+Reading time = 0.24 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.15s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.16s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     2s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     2s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     2s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     2s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     2s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 2.01 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.48 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+Dict{Any, Any}(([2040, 0, 0], "buildHVDC") => 2.4923461584096834e8, ([2035, 0, 0], "build500kv") => 2.4744095620220405e8, ([2040, 0, 0], "build500kv") => 2.4128578244814375e8, ([2025, 0, 0], "buildHVDC") => 6.387434913185297e8, ([2030, 0, 0], "buildHVDC") => 5.1190934605125856e8, ([2020, 0, 0], "buildHVDC") => 8.691629561291927e8, ([2025, 0, 0], "build500kv") => 2.6443665798350286e8, ([2030, 0, 0], "build500kv") => 2.5430308266449022e8, ([2020, 0, 0], "build500kv") => 2.673139898173528e8, ([2035, 0, 0], "buildHVDC") => 3.8393692325828457e8)
+buildHVDC
+Computing for year 2045
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.78s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-kcp6uxac.lp
+Reading time = 0.22 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.14s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.20s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     1s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     2s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     2s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     2s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     2s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     2s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     2s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 2.16 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      3s
+
+Solved in 630 iterations and 2.66 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.87s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-ztso3ty1.lp
+Reading time = 0.22 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.16s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.16s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     1s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     1s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     1s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.73 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.16 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.8s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-nino3s7_.lp
+Reading time = 0.22 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.15s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.14s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     1s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     1s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     1s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.74 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.19 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.9s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-lpbjxnqh.lp
+Reading time = 0.23 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.16s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.14s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     0s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     1s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     2s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     2s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.81 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.22 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.9s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-a6rpsmg0.lp
+Reading time = 0.22 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.15s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.17s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     2s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     2s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     2s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.94 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.44 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.88s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-7m4qz6n2.lp
+Reading time = 0.21 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.16s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.17s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     1s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     2s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     2s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     2s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     2s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     2s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 2.05 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      3s
+
+Solved in 630 iterations and 2.53 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+INFO:pypsa.io:Imported network pypsa_60_multiyear.nc has buses, carriers, generators, lines, links, loads
+INFO:pypsa.linopf:Prepare linear problem
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+/Users/kamrantehranchi/opt/miniconda3/envs/pypsa-usa/lib/python3.10/site-packages/pypsa/linopt.py:473: FutureWarning:
+
+In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+
+INFO:pypsa.linopf:Total preparation time: 0.86s
+INFO:pypsa.linopf:Solve linear problem using Gurobi solver
+Read LP format model from file /var/folders/00/vqry7y9s78q3rvf_m_jmk_bc0000gn/T/pypsa-problem-_rzu_xks.lp
+Reading time = 0.23 seconds
+obj: 136752 rows, 54149 columns, 285544 nonzeros
+Gurobi Optimizer version 10.0.0 build v10.0.0rc2 (mac64[x86])
+
+CPU model: Intel(R) Core(TM) i7-1068NG7 CPU @ 2.30GHz
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+
+Optimize a model with 136752 rows, 54149 columns and 285544 nonzeros
+Model fingerprint: 0xbca7406e
+Coefficient statistics:
+  Matrix range     [2e-06, 1e+03]
+  Objective range  [1e+00, 2e+05]
+  Bounds range     [1e+00, 3e+09]
+  RHS range        [4e-01, 6e+04]
+Warning: Model contains large bounds
+         Consider reformulating model or setting NumericFocus parameter
+         to avoid numerical issues.
+Presolve removed 112836 rows and 14048 columns
+Presolve time: 0.15s
+Presolved: 23916 rows, 40101 columns, 166993 nonzeros
+
+Concurrent LP optimizer: dual simplex and barrier
+Showing barrier log only...
+
+Ordering time: 0.15s
+
+Barrier statistics:
+ Dense cols : 20
+ AA' NZ     : 3.794e+05
+ Factor NZ  : 1.966e+06 (roughly 40 MB of memory)
+ Factor Ops : 1.029e+09 (less than 1 second per iteration)
+ Threads    : 3
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.88616852e+13 -1.02704128e+13  3.52e+07 1.77e-12  8.31e+10     0s
+   1   6.13300321e+13 -1.02951729e+13  5.22e+06 5.39e+03  1.32e+10     0s
+   2   1.62586359e+13 -9.41025486e+12  3.55e+05 7.01e+01  1.08e+09     1s
+   3   1.69465166e+12 -5.17614484e+12  3.27e+04 6.05e-09  1.45e+08     1s
+   4   1.94432476e+11 -1.26046459e+12  2.76e+03 6.98e-09  2.04e+07     1s
+   5   4.61482501e+10 -2.55523018e+11  3.97e+02 5.36e-09  3.76e+06     1s
+   6   1.20762831e+10 -6.61401828e+10  6.65e+01 1.57e-09  9.32e+05     1s
+   7   2.92279242e+09 -2.84946718e+10  1.34e+01 3.26e-09  3.69e+05     1s
+   8   1.34093992e+09 -1.22860141e+10  5.37e+00 2.33e-09  1.60e+05     1s
+   9   6.99015136e+08 -7.37085051e+09  2.40e+00 1.86e-09  9.46e+04     1s
+  10   4.56103442e+08 -5.76166966e+08  9.04e-01 2.79e-09  1.21e+04     1s
+  11   3.08310853e+08  1.43595153e+08  2.06e-01 1.51e-09  1.93e+03     1s
+  12   2.55509998e+08  2.22196807e+08  4.02e-02 2.56e-09  3.90e+02     1s
+  13   2.44476680e+08  2.33591581e+08  1.20e-02 1.98e-09  1.27e+02     1s
+  14   2.41530562e+08  2.36753763e+08  5.09e-03 1.86e-09  5.59e+01     1s
+  15   2.40379411e+08  2.37965679e+08  2.64e-03 5.82e-10  2.82e+01     1s
+  16   2.39436026e+08  2.38530369e+08  6.83e-04 6.52e-09  1.06e+01     1s
+  17   2.39194989e+08  2.38990476e+08  2.12e-04 2.79e-09  2.39e+00     1s
+  18   2.39090767e+08  2.39066165e+08  2.79e-05 9.90e-10  2.88e-01     1s
+  19   2.39073376e+08  2.39072277e+08  1.61e-06 1.79e-08  1.29e-02     1s
+  20   2.39072950e+08  2.39072921e+08  6.58e-08 4.66e-10  3.37e-04     2s
+  21   2.39072945e+08  2.39072945e+08  1.22e-09 1.16e-10  3.07e-06     2s
+  22   2.39072945e+08  2.39072945e+08  8.73e-11 2.33e-10  3.07e-09     2s
+
+Barrier solved model in 22 iterations and 1.62 seconds (1.74 work units)
+Optimal objective 2.39072945e+08
+
+Crossover log...
+
+     597 DPushes remaining with DInf 0.0000000e+00                 2s
+       0 DPushes remaining with DInf 0.0000000e+00                 2s
+
+      30 PPushes remaining with PInf 0.0000000e+00                 2s
+       0 PPushes remaining with PInf 0.0000000e+00                 2s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 2.3949635e-10      2s
+
+
+Solved with barrier
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+     630    2.3907295e+08   0.000000e+00   0.000000e+00      2s
+
+Solved in 630 iterations and 2.06 seconds (2.04 work units)
+Optimal objective  2.390729453e+08
+INFO:pypsa.linopf:Optimization successful. Objective value: 2.39e+08
+Total Operational Cost:   239072945.53339612
+Dict{Any, Any}(([2040, 0, 0], "buildHVDC") => 2.4923461584096834e8, ([2035, 0, 0], "build500kv") => 2.4744095620220405e8, ([2040, 0, 0], "build500kv") => 2.4128578244814375e8, ([2025, 0, 0], "buildHVDC") => 6.387434913185297e8, ([2030, 0, 0], "buildHVDC") => 5.1190934605125856e8, ([2020, 0, 0], "buildHVDC") => 7.645737428905382e8, ([2025, 0, 0], "build500kv") => 2.6443665798350286e8, ([2030, 0, 0], "build500kv") => 2.5430308266449022e8, ([2020, 0, 0], "build500kv") => 2.673139898173528e8, ([2035, 0, 0], "buildHVDC") => 3.8393692325828457e8)
+buildHVDC
+
+julia> 
